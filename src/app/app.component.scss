@@ -1,0 +1,29 @@
+// funciones  SASS
+@function color($color-name){
+    @return map-get($colors, $color-name );
+ };
+ $colors:(
+   crema:#F3F1F2
+ );
+
+.location{
+    height: 400px;
+    width: 250px;
+    padding: 0 20px;
+    background-color: color(crema);
+    .topSection{
+        display: flex;
+        align-items: flex-start;
+        justify-content:space-between;
+        .title{
+            margin-top: 10px;
+        }
+        .btnActionSection{
+            display: flex;
+            .btnActionElm{
+                margin-left: 0.8em;
+                cursor: pointer;
+            }
+        }
+    }
+}
