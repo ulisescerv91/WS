@@ -1,8 +1,10 @@
 .location {
-  height: 400px;
   width: 250px;
   padding: 0 20px;
   background-color: #F3F1F2;
+  overflow: hidden;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .location .topSection {
@@ -30,5 +32,19 @@
 .location .topSection .btnActionSection .btnActionElm {
   margin-left: 0.8em;
   cursor: pointer;
+}
+
+.show {
+  height: auto;
+}
+
+.hide {
+  height: 0;
+}
+
+.rotate {
+  margin-top: 110px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 /*# sourceMappingURL=app.component.css.map */

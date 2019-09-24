@@ -1,11 +1,14 @@
-<div class="location">
+<div class="location"  [ngClass]="{'rotate':rotateVal}" >
   <div class="topSection">
     <span class="title">
       Location
     </span>
     <div class="btnActionSection">
-      <div class="btnActionElm">_</div>
-      <div class="btnActionElm">M</div>
+      <div class="btnActionElm" (click)="collapse()">_</div>
+      <div class="btnActionElm" (click)="rotate()">M</div>
     </div>
+  </div>
+  <div class="search" [ngClass]="{'show' : show , 'hide' : !show} ">
+    <app-search-country></app-search-country>
   </div>
 </div>

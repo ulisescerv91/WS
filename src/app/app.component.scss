@@ -7,10 +7,11 @@
  );
 
 .location{
-    height: 400px;
     width: 250px;
     padding: 0 20px;
     background-color: color(crema);
+    overflow: hidden;
+    transform: rotate(0deg) ;
     .topSection{
         display: flex;
         align-items: flex-start;
@@ -25,5 +26,17 @@
                 cursor: pointer;
             }
         }
-    }
+    }   
+}
+.show{
+    //display: block;
+    height: auto;
+}
+.hide{
+    //display: none;
+    height: 0;
+}
+.rotate{
+    margin-top: 110px;
+    transform: rotate(-90deg) ;
 }

@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'blueOptima';
+  show = true;
+  rotateVal = false;
+
+  collapse () {
+    this.show = !this.show;
+  }
+
+  rotate () {
+    this.show = false;
+    this.rotateVal = !this.rotateVal;
+  }
 }
