@@ -1,8 +1,43 @@
-app-search-country{
-    border: 1px solid black;
+.searchContent{
+    position: relative;
+    
+    .searchInput{
+        width: 100%;
+        padding: 0.5em  0.5em  0.5em  2em;                
+    }
+    &::after{
+        content: '';
+        background-color: red;
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 1em;
+        transform: translateY(-50%)
+        
+    }
+}
+.countryList{
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1em;
+    .countryElm{
+        min-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        // display: flex;
+        // justify-content: flex-start;
+        // align-items: center;
+        // input[type="checkbox"]{
+        // }
+    }
 }
 
 .flag{
-    width: 50px;
-    height: auto;
+    width: 15px;
+    height: 10px;
+    margin:0 0.6em;
 }

@@ -21,7 +21,6 @@ export class SearchCountryComponent implements OnInit {
   arrayLeters;
 
   ngOnInit() {
-    console.log('test')
      this.getCountries();//
   }
 

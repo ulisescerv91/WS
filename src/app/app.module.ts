@@ -10,13 +10,17 @@ import { GetCountriesService} from './services/get-countries.service'
 import { AppComponent } from './app.component';
 import { SearchCountryComponent } from './components/search-country/search-country.component';
 import { MyFilterPipe } from './pipes/my-filter.pipe';
+import { BlankNamePipe } from './pipes/blank-name.pipe';
+import { GetFirstLetterPipe } from './pipes/get-first-letter.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchCountryComponent,
-    MyFilterPipe
+    MyFilterPipe,
+    BlankNamePipe,
+    GetFirstLetterPipe
   ],
   imports: [
     BrowserModule,

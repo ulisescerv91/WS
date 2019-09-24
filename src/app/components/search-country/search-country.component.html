@@ -1,15 +1,23 @@
-<input [(ngModel)]="searchText" placeholder="search text goes here">
-<div class="index">
-    <span *ngFor="let item of arrayLeters">{{item}}</span>
+<div class="searchContent">
+    <input [(ngModel)]="searchText" placeholder="Filter locations" class="searchInput">
 </div>
-<ul>
-    <span *ngIf="show">Loading...</span>
-    <li *ngFor="let pais of result | myFilter : searchText" >
-        <span class="countryData"> {{pais.capital}} - {{pais.name}}</span>
-        <img src="{{pais.flag}}" alt="" srcset="" class="flag">
-    </li>
+<div class="index">
+    <a href="#{{item}}" *ngFor="let item of arrayLeters">
+        {{item}}
+    </a>
+</div>
 
-</ul>
+<span *ngIf="show">Loading...</span>
+
+<div class="countryList" *ngIf="result.length > 0">
+    <div *ngFor="let pais of result | myFilter : searchText"  class="countryElm" [id]="pais.name | getFirstLetter">
+        <input type="checkbox" [name]="pais.name" >
+
+        <img  [src]="pais.flag" alt="" srcset="" class="flag" >        
+        <span class="countryData"> {{pais.capital | blankName}} - {{pais.name | blankName}}</span>
+    </div>
+</div>
+
 
 
 <!-- <div class="result" >
