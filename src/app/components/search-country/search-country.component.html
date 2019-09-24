@@ -1,10 +1,16 @@
 <input [(ngModel)]="searchText" placeholder="search text goes here">
+<div class="index">
+    <span *ngFor="let item of arrayLeters">{{item}}</span>
+</div>
 <ul>
-    <li *ngFor="let pais of result | myFilter : searchText" (click) = "myTest()">
+    <span *ngIf="show">Loading...</span>
+    <li *ngFor="let pais of result | myFilter : searchText" >
         <span class="countryData"> {{pais.capital}} - {{pais.name}}</span>
         <img src="{{pais.flag}}" alt="" srcset="" class="flag">
     </li>
+
 </ul>
+
 
 <!-- <div class="result" >
     <button *ngFor="let item of result" >{{item.title}}</button>

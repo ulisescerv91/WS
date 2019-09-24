@@ -17,28 +17,31 @@ export class SearchCountryComponent implements OnInit {
 
   
   result:any = [{}];
+  show:boolean = true;//Show the LOADING Value
+  arrayLeters;
+
   ngOnInit() {
     console.log('test')
+     this.getCountries();//
+  }
+
+  getCountries(){    
     this.getDataServ.getCountriesJSON().subscribe(
       data => {
         this.result = data;
+        this.show = false;
+        this.getFirstLetterOfCountries();
       },
       err => {
         console.log('Error in Service -->>',err)
       }
-    );    
+    );   
   }
-
-  myTest(){
-    //  this.result = this.getDataServ.getCountriesJSON()
-    //  .subscribe(
-    //   data => {
-    //     this.result = data;
-    //   },
-    //   err => {
-    //     console.log('Error in Service -->>',err)
-    //   }
-    // );    
+  
+  getFirstLetterOfCountries(){
+    this.arrayLeters = this.result.map(item =>item.name[0])
+    this.arrayLeters = [...new Set(this.arrayLeters)];
+    console.log( this.arrayLeters );
   }
 
 }

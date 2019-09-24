@@ -10,16 +10,8 @@ export class GetCountriesService {
 
   constructor(private http:HttpClient) { }
 
-  myOjb = [
-    {'name':"mx"},
-    {'name':"rs"},
-    {'name':"ar"}
-
-  ]
-  getCountriesJSON(){
-    //return this.http.get('https://jsonplaceholder.typicode.com/posts')
-    return this.http.get('https://restcountries.eu/rest/v2/all')
-    //return this.myOjb
+  getCountriesJSON(){    
+    return this.http.get('https://restcountries.eu/rest/v2/all')    
   }
 
 }
