@@ -37,24 +37,29 @@
     max-width: 100%;
     padding: 0 1em;
     position: relative;
-    
-    .index{
+    .indexContainer{
+        height: 100%;//Need to STYCKY Works
         position: absolute;
-        right: 5px;
         top: -25px;
-        display: flex;
-        flex-direction: column;
-        .letterIndex{
-            font-size: 10px;
-            text-decoration: none;
-            color:black;
-            text-align: center;
-            display: block;
-            padding: 2px 0;
-            &:hover{
-                background-color: #24ADF3;
-                color: #fff;
-                transform: scale(1.8);
+        right: 0;
+        .index{
+            width: 100%;
+            position: sticky;        
+            top: 15px;
+            display: flex;
+            flex-direction: column;
+            .letterIndex{
+                font-size: 10px;
+                text-decoration: none;
+                color:black;
+                text-align: center;
+                display: block;
+                padding: 2px 0;
+                &:hover{
+                    background-color: #24ADF3;
+                    color: #fff;
+                    transform: scale(1.8);
+                }
             }
         }
     }

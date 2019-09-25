@@ -9,9 +9,9 @@
 .location{
     width: 300px;
     padding: 0 20px;
-    background-color: color(crema);    
-    overflow: hidden;
-    transform: rotate(0deg) ;        
+    background-color: color(crema);        
+    transform: rotate(0deg) ;
+    min-height: 500px;
     .topSection{
         padding: 10px 0;
         display: flex;
@@ -54,8 +54,11 @@
     height: auto;
 }
 .hide{
-    //display: none;
     height: 0;
+}
+.overflowHide{
+    overflow: hidden;
+    min-height: 0;
 }
 .rotate{
     margin-top: 130px;

@@ -12,13 +12,12 @@ export class SearchCountryComponent implements OnInit {
 
   
   constructor(private getDataServ:GetCountriesService) { }
-  userName:string = 'Data que muestra la primera vez que carga la imagen';
  
 
   
   result:any = [{}];
   show:boolean = true;//Show the LOADING Value
-  arrayLeters;
+  arrayLeters:any;
   checkboxArray:any;
 
   ngOnInit() {
@@ -40,9 +39,8 @@ export class SearchCountryComponent implements OnInit {
   
   getFirstLetterOfCountries(){
     this.arrayLeters = this.result.map(item =>item.name[0])
-    this.arrayLeters = [...new Set(this.arrayLeters)];
-    console.log( this.arrayLeters );
-  }
+    this.arrayLeters = [...new Set(this.arrayLeters)].sort( (a,b)=>{ if(a<b) return -1; if(a>b) return 1; return 0;})
+  }  
 
   clearCheckBox(){
     this.checkboxArray = document.querySelectorAll('.checkboxCountry') 

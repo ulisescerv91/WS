@@ -2,9 +2,9 @@
   width: 300px;
   padding: 0 20px;
   background-color: #F3F1F2;
-  overflow: hidden;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
+  min-height: 500px;
 }
 
 .location .topSection {
@@ -63,6 +63,11 @@
 
 .hide {
   height: 0;
+}
+
+.overflowHide {
+  overflow: hidden;
+  min-height: 0;
 }
 
 .rotate {
