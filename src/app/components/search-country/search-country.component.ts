@@ -19,6 +19,7 @@ export class SearchCountryComponent implements OnInit {
   result:any = [{}];
   show:boolean = true;//Show the LOADING Value
   arrayLeters;
+  checkboxArray:any;
 
   ngOnInit() {
      this.getCountries();//
@@ -41,6 +42,13 @@ export class SearchCountryComponent implements OnInit {
     this.arrayLeters = this.result.map(item =>item.name[0])
     this.arrayLeters = [...new Set(this.arrayLeters)];
     console.log( this.arrayLeters );
+  }
+
+  clearCheckBox(){
+    this.checkboxArray = document.querySelectorAll('.checkboxCountry') 
+    this.checkboxArray.forEach(element => {
+      element.checked = false;
+    });
   }
 
 }

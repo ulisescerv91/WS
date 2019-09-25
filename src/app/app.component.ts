@@ -11,6 +11,7 @@ export class AppComponent {
 
   collapse () {
     this.show = !this.show;
+    this.rotateVal = false;
   }
 
   rotate () {

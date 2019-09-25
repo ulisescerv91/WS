@@ -6,38 +6,155 @@
         padding: 0.5em  0.5em  0.5em  2em;                
     }
     &::after{
-        content: '';
-        background-color: red;
-        width: 5px;
-        height: 5px;
-        position: absolute;
-        border-radius: 50%;
+        width: 20px;
+        height: 20px;
         top: 50%;
-        left: 1em;
-        transform: translateY(-50%)
+        left: 5px;
+        transform: translateY(-50%);
+        content: 'search';        
+        font-family:'Material Icons' ;
+        font-size: 20px;
+        position: absolute;
+        color: #24ADF3;
+        border-radius: 50%;
         
     }
 }
+.clearContainer{    
+    padding: 0.4em 0 ;
+    display: inline-block;
+    .clearAction{
+        color: #24ADF3;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    
+}
+
 .countryList{
     width: 100%;
     max-width: 100%;
     padding: 0 1em;
-    .countryElm{
-        min-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-
-        // display: flex;
-        // justify-content: flex-start;
-        // align-items: center;
-        // input[type="checkbox"]{
-        // }
+    position: relative;
+    
+    .index{
+        position: absolute;
+        right: 5px;
+        top: -25px;
+        display: flex;
+        flex-direction: column;
+        .letterIndex{
+            font-size: 10px;
+            text-decoration: none;
+            color:black;
+            text-align: center;
+            display: block;
+            padding: 2px 0;
+            &:hover{
+                background-color: #24ADF3;
+                color: #fff;
+                transform: scale(1.8);
+            }
+        }
     }
+    .countryElm{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+
+        // ------ CHECKBOX
+        .container {
+            width: 100%;
+            padding: 0.4em 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            user-select: none;
+            cursor: pointer;
+            
+            .flag{
+                width: 15px;
+                height: 10px;
+                margin:0 3px 0 22px;
+            }
+            
+            .countryData{                
+                width: 75%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+
+            /* ---  CheckBox  ---  */
+
+            /* Hide the browser's default checkbox */
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+          
+            /* Create a custom checkbox */
+            .checkmark {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                height: 15px;
+                width: 15px;
+                border: 1px solid #333;
+                background-color: rgb(255, 255, 255);
+            }
+            
+            /* On mouse-over, add a grey background color */
+            &:hover{
+                background-color: #fff;
+            }
+            &:hover input ~ .checkmark {
+                background-color: rgb(233, 233, 233);
+            }
+            
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+            
+            /* Show the checkmark when checked */
+            & input:checked ~ .checkmark:after {
+                display: block;
+            }
+            
+            /* Style the checkmark/indicator */
+            & .checkmark:after {
+                left: 3px;
+                top: 1px;
+                width: 4px;
+                height: 7px;
+                border: solid #2196F3;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+            /* ---  End CheckBox  ---  */
+        
+        }
+    }
+    .line{
+        height: 1px;
+        width: 95%;
+        border: 0px solid #aaa;
+        margin: 1em 0;
+        border-bottom-width: 1px;
+        display: block;
+    }
+    
 }
 
-.flag{
-    width: 15px;
-    height: 10px;
-    margin:0 0.6em;
-}

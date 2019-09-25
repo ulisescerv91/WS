@@ -9,12 +9,13 @@
 .location{
     width: 300px;
     padding: 0 20px;
-    background-color: color(crema);
+    background-color: color(crema);    
     overflow: hidden;
-    transform: rotate(0deg) ;
+    transform: rotate(0deg) ;        
     .topSection{
+        padding: 10px 0;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content:space-between;
         .title{
             margin-top: 10px;
@@ -24,6 +25,26 @@
             .btnActionElm{
                 margin-left: 0.8em;
                 cursor: pointer;
+    
+                .minimizeIcon::after{
+                    content: 'minimize'; 
+                }
+                .maximizeIcon::after{
+                    content: 'launch'; 
+                }  
+                .collapseIcon::after{
+                    display: block;
+                    content: 'keyboard_tab'; 
+            
+                    transform: rotate(90deg)
+                }
+                .collapseReturnIcon::after{
+                    display: block;
+                    content: 'keyboard_tab'; 
+                    transform: rotate(180deg)
+
+                                
+                }
             }
         }
     }   
@@ -37,6 +58,7 @@
     height: 0;
 }
 .rotate{
-    margin-top: 110px;
+    margin-top: 130px;
+    margin-left: -120px;
     transform: rotate(-90deg) ;
 }

@@ -1,25 +1,31 @@
 <div class="searchContent">
     <input [(ngModel)]="searchText" placeholder="Filter locations" class="searchInput">
+    <!-- <i class="material-icons">search</i> -->
 </div>
-<div class="index">
-    <a href="#{{item}}" *ngFor="let item of arrayLeters">
-        {{item}}
-    </a>
-</div>
-
-<span *ngIf="show">Loading...</span>
-
-<div class="countryList" *ngIf="result.length > 0">
-    <div *ngFor="let pais of result | myFilter : searchText"  class="countryElm" [id]="pais.name | getFirstLetter">
-        <input type="checkbox" [name]="pais.name" >
-
-        <img  [src]="pais.flag" alt="" srcset="" class="flag" >        
-        <span class="countryData"> {{pais.capital | blankName}} - {{pais.name | blankName}}</span>
+<div class="clearContainer" id="clearAll"  >
+    <div class="clearAction" (click)="clearCheckBox()">
+            <i class="material-icons  icon">close</i>
+            <span>Clear All</span>
     </div>
 </div>
 
 
+<span *ngIf="show">Loading...</span>
 
-<!-- <div class="result" >
-    <button *ngFor="let item of result" >{{item.title}}</button>
-</div> -->
+<div class="countryList" *ngIf="result.length > 0">
+    <div class="index">
+        <a href="#{{item}}" *ngFor="let item of arrayLeters" class="letterIndex">
+            {{item}}
+        </a>
+    </div>
+    <div *ngFor="let pais of result | myFilter : searchText"  class="countryElm" [id]="pais.name | getFirstLetter">
+
+        <label class="container">
+            <img  [src]="pais.flag" alt="" srcset="" class="flag" >
+            <span class="countryData">{{pais.capital | blankName}} - {{pais.name | blankName}}</span>
+            <input type="checkbox"  [name]="pais.name" class="checkboxCountry">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    <div class="line"></div>
+</div>

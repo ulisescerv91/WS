@@ -1,11 +1,11 @@
-<div class="location"  [ngClass]="{'rotate':rotateVal}" >
+<div class="location" id="location" [ngClass]="{'rotate':rotateVal}" >
   <div class="topSection">
     <span class="title">
       Location
     </span>
     <div class="btnActionSection">
-      <div class="btnActionElm" (click)="collapse()">_</div>
-      <div class="btnActionElm" (click)="rotate()">M</div>
+      <div class="btnActionElm" (click)="collapse()"><i class="icon" [ngClass]="{'minimizeIcon' : show , 'maximizeIcon' : !show} "></i></div>
+      <div class="btnActionElm" (click)="rotate()"><i class="icon" [ngClass]="{'collapseIcon' : rotateVal , 'collapseReturnIcon' : !rotateVal} "></i></div>
     </div>
   </div>
   <div class="search" [ngClass]="{'show' : show , 'hide' : !show} ">
